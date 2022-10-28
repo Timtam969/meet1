@@ -1,0 +1,23 @@
+{
+  "name": "auth-server",
+  "proxy": "https://aqxcvppeb5.execute-api.eu-central-1.amazonaws.com/dev/api/token/{code}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timtam969/meet.git"
+  },
+  "author": "Timothy Losper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timtam969/meet/issues"
+  },
+  "homepage": "https://github.com/timtam969/meet#readme",
+  "dependencies": {
+    "googleapis": "^59.0.0"
+  }
+}
