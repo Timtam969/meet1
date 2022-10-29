@@ -82,7 +82,9 @@
         code = encodeURIComponent(codeValue.value);
       }
       const getTokenRequest = getToken + "/" + code;
-      fetch(getTokenRequest)
+      fetch(getTokenRequest, {
+        mode: 'no-cors',
+      })
         .then(function (response) {
           return response.json();
         })

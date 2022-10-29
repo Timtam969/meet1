@@ -37,6 +37,7 @@ module.exports.getAuthURL = async () => {
     statusCode: 200,
     headers: {
       // "Access-Control-Allow-Origin": "*",
+      'no-cors'
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -65,6 +66,7 @@ module.exports.getAccessToken = async (event) => {
         statusCode: 200,
         headers: {
           // "Access-Control-Allow-Origin": "*",
+          'no-cors'
         },
         body: JSON.stringify(token),
       };
@@ -112,6 +114,7 @@ module.exports.getCalendarEvents = async (event) => {
       statusCode: 200,
       headers: {
         // "Access-Control-Allow-Origin": "*",
+        'no-cors'
       },
       body: JSON.stringify({ events: results.data.items }),
     };
