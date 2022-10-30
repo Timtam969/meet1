@@ -45,11 +45,10 @@
     <p id="events"></p>
   </main>
   <script type="text/javascript">
-    // --------------------- STEP 1
     const getURLElement = document.getElementById("getURL");
     const resultElement = document.getElementById("result");
     const resultLink = document.getElementById("authURL");
-    // Replace this with your own endpoint
+
     const getAuthURL =
       "https://aqxcvppeb5.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
 
@@ -60,9 +59,7 @@
         })
         .then(function (json) {
           const result = JSON.stringify(json);
-          // we get the value of authUrl
           const { authUrl } = JSON.parse(result);
-          // then add it to the html
           resultElement.innerText = result;
           resultLink.href = authUrl;
         });
@@ -88,7 +85,7 @@
           accessTokenElement.innerText = JSON.stringify(json);
         });
     };
-    // --------------------- END OF STEP 2
+
     const getEvents = document.getElementById("getEvents");
     const events = document.getElementById("events");
     const getCalendarEvents =
