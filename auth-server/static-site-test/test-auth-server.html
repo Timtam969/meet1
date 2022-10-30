@@ -76,8 +76,6 @@
 
     getAccessToken.onclick = function () {
       let code = codeValue.value;
-
-      // if the authorization code is not URL-encoded, then URL-encode it.
       if (decodeURIComponent(code) === code) {
         code = encodeURIComponent(codeValue.value);
       }
@@ -94,7 +92,7 @@
     const getEvents = document.getElementById("getEvents");
     const events = document.getElementById("events");
     const getCalendarEvents =
-      "https://177dyigb5k.execute-api.us-west-1.amazonaws.com/dev/api/get-events";
+      "https://aqxcvppeb5.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
 
     getEvents.onclick = function () {
       const { access_token } = JSON.parse(accessTokenElement.innerText);
