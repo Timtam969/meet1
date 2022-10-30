@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/timtam969/meet.git"
+    "url": "https://github.com/Timtam969/meet.git"
   },
   "author": "Timothy Losper",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/timtam969/meet/issues"
+    "url": "https://github.com/Timtam969/meet/issues"
   },
-  "homepage": "https://github.com/timtam969/meet#readme",
+  "homepage": "https://github.com/Timtam969/meet#readme",
   "dependencies": {
     "googleapis": "^59.0.0"
   }
