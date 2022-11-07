@@ -15,6 +15,36 @@ class App extends Component {
     numberOfEvents: 32
   }
 
+
+
+
+
+  updateEvents = (location, maximumEvents) => {
+    // if (maximumEvents === undefined) {
+    //   maximumEvents = this.state.numberOfEvents;
+    // } else (
+    //   this.setstate({ numberOfEvents: maximumEvents })
+    // )
+    // if (location === undefined) {
+    //   location = this.state.locationSelected;
+    // }
+
+    getEvents().then((events) => {
+      const locationEvents = (location === 'all') ?
+        events :
+        events.filter((event) => event.location === location);
+      this.setState({
+        events: locationEvents.slice(0, this.state.numberOfEvents),
+      });
+    });
+  }
+
+  updateNumberOfEvents(number) {
+    this.setState({
+      numberOfEvents: number,
+    });
+  }
+
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
@@ -24,36 +54,23 @@ class App extends Component {
     });
   }
 
+
   componentWillUnmount() {
     this.mounted = false;
   }
 
-  updateEvents = (location, maximumEvents) => {
-    if (maximumEvents === undefined) {
-      maximumEvents = this.state.numberOfEvents;
-    }
-    getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-        events :
-        events.filter((event) => event.location === location);
-      this.setState({
-        events: locationEvents,
-        numberOfEvents: maximumEvents
-      });
-    });
-  }
-
 
   render() {
-    let { locations, numberOfEvents, events } = this.state;
     return (
       <div className="App">
         <h1>The Meet App</h1>
         <h3 className="subtitle">Search for your city and see upcoming events:</h3>
 
-        <CitySearch locations={locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents numberOfEvents={numberOfEvents} updateEvents={this.updateEvents} />
-        <EventList events={events} />
+        <CitySearch locations={this.state.locations}
+          updateEvents={this.updateEvents} />
+        <NumberOfEvents numberOfEvents={this.state.numberOfEvents}
+          updateNumberOfEvents={(numberOfEvents) => this.updateNumberOfEvents(numberOfEvents)} />
+        <EventList events={this.state.events} />
       </div>
     );
   }
