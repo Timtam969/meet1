@@ -16,34 +16,50 @@ class App extends Component {
   }
 
 
-
-
-
-  updateEvents = (location, maximumEvents) => {
-    // if (maximumEvents === undefined) {
-    //   maximumEvents = this.state.numberOfEvents;
-    // } else (
-    //   this.setstate({ numberOfEvents: maximumEvents })
-    // )
-    // if (location === undefined) {
-    //   location = this.state.locationSelected;
-    // }
+  updateEvents = (location, eventCount) => {
+    const { numberOfEvents } = this.state;
+    if (location === undefined) location = this.state.selectedLocation;
 
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-        events :
-        events.filter((event) => event.location === location);
+      const locationEvents =
+        location === "all"
+          ? events
+          : events.filter((event) => event.location === location);
+      eventCount = eventCount === undefined ? numberOfEvents : eventCount;
       this.setState({
-        events: locationEvents.slice(0, this.state.numberOfEvents),
+        events: locationEvents.slice(0, eventCount),
+        selectedLocation: location,
+        numberOfEvents: eventCount,
       });
     });
-  }
+  };
 
-  updateNumberOfEvents(number) {
-    this.setState({
-      numberOfEvents: number,
-    });
-  }
+
+  //updateEvents = (location, maximumEvents) => {
+  // if (maximumEvents === undefined) {
+  //   maximumEvents = this.state.numberOfEvents;
+  // } else (
+  //   this.setstate({ numberOfEvents: maximumEvents })
+  // )
+  // if (location === undefined) {
+  //   location = this.state.locationSelected;
+  // }
+
+  //   getEvents().then((events) => {
+  //     const locationEvents = (location === 'all') ?
+  //       events :
+  //       events.filter((event) => event.location === location);
+  //     this.setState({
+  //       events: locationEvents.slice(0, this.state.numberOfEvents),
+  //     });
+  //   });
+  // }
+
+  // updateNumberOfEvents(number) {
+  //   this.setState({
+  //     numberOfEvents: number,
+  //   });
+  // }
 
   componentDidMount() {
     this.mounted = true;

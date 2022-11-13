@@ -1,12 +1,11 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 
 describe('show/hide an event details', () => {
   let browser;
   let page;
 
-  // RUN THIS CODE IF YOU ARE TRYING TO TURN OFF HEADLESS MODE TO SEE TESTS BEING RUN
   beforeAll(async () => {
-    jest.setTimeout(900000);
+    jest.setTimeout(30000);
     browser = await puppeteer.launch({
       // executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
       headless: false,
@@ -16,6 +15,10 @@ describe('show/hide an event details', () => {
     page = await browser.newPage();
     await page.goto('http://localhost:3000/');
     await page.waitForSelector('.event');
+  });
+
+  afterAll(() => {
+    browser.close();
   });
 
 
