@@ -2,7 +2,7 @@
   "name": "meet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/timtam969.io/meet",
+  "homepage": "https://github.com/Timtam969.io/meet",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -63,11 +63,11 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/timtam969/meet.git"
+    "url": "https://github.com/Timtam969/meet.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/timtam969/meet/issues"
+    "url": "https://github.com/Timtam969/meet/issues"
   }
 }
