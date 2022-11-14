@@ -13,7 +13,7 @@ describe('show/hide an event details', () => {
       ignoreDefaultArgs: ['--disable-extensions'] // ignores default setting that causes timeout errors
     });
     page = await browser.newPage();
-    await page.goto('http://localhost:3000/');
+    await page.goto('https://localhost:3000/');
     await page.waitForSelector('.event');
   });
 
