@@ -22,6 +22,7 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <div className="numberOfEvents">
+        <div>Please enter number of Events</div>
         <label>
           <input
             type="number"
