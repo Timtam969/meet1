@@ -52,17 +52,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>The Meet App</h1>
-        <h3 className='subtitle'>Search for your city and see upcoming events:</h3>
-        <CitySearch locations={this.state.locations}
-          updateEvents={this.updateEvents} />
-        <h3 className='subtitle'>Number of shown events</h3>
+        <div>
+          <h1>The Meet App</h1>
+          <h3 className='subtitle'>Search for your city and see upcoming events:</h3>
+          <CitySearch locations={this.state.locations}
+            updateEvents={this.updateEvents} />
+        </div>
+        <div>
+          <h3 className='subtitle'>Number of shown events</h3>
+        </div>
         <div>
           <NumberOfEvents numberOfEvents={this.state.numberOfEvents}
             updateNumberOfEvents={(numberOfEvents) => this.updateNumberOfEvents(numberOfEvents)} />
         </div>
-        <h3 className='subtitle'>Event List</h3>
-        <EventList events={this.state.events} />
+        <div>
+          <h3 className='subtitle'>Event List</h3>
+          <EventList events={this.state.events} />
+        </div>
       </div>
     );
   }
