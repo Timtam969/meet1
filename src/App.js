@@ -72,7 +72,7 @@ class App extends Component {
         </div>
         <div>
           <div>
-            <h3 className='subtitle'>Event List</h3>
+            <h3 className='subtitle'>Events List</h3>
           </div>
           <EventList events={this.state.events} />
         </div>
